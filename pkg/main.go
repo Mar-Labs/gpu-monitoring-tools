@@ -81,12 +81,10 @@ func main() {
 		},
 		&cli.StringFlag{
 			Name:    "consul-address",
-			Aliases: []string{"c"},
 			Usage:   "consul address",
 		},
 		&cli.StringFlag{
 			Name:    "service-name",
-			Aliases: []string{"s"},
 			Usage:   "service name",
 		},
 	}
