@@ -3,11 +3,15 @@ module github.com/NVIDIA/gpu-monitoring-tools
 go 1.14
 
 require (
+	github.com/docker/go-units v0.4.0
+	github.com/elastic/go-sysinfo v1.4.0
 	github.com/gorilla/mux v1.7.4
+	github.com/hashicorp/consul/api v1.8.1
 	github.com/sirupsen/logrus v1.4.2
 	github.com/stretchr/testify v1.5.1
 	github.com/urfave/cli/v2 v2.2.0
 	golang.org/x/sys v0.0.0-20200413165638-669c56c373c4 // indirect
+	golang.org/x/xerrors v0.0.0-20190717185122-a985d3407aa7
 	google.golang.org/grpc v1.28.1
 	k8s.io/kubernetes v1.18.2
 )

@@ -79,6 +79,16 @@ func main() {
 			Usage:   fmt.Sprintf("Choose Type of GPU ID to use to map kubernetes resources to pods. Possible values: '%s', '%s'", GPUUID, DeviceName),
 			EnvVars: []string{"DCGM_EXPORTER_KUBERNETES_GPU_ID_TYPE"},
 		},
+		&cli.StringFlag{
+			Name:    "consul-address",
+			Aliases: []string{"c"},
+			Usage:   "consul address",
+		},
+		&cli.StringFlag{
+			Name:    "service-name",
+			Aliases: []string{"s"},
+			Usage:   "service name",
+		},
 	}
 
 	c.Action = func(c *cli.Context) error {
@@ -124,6 +134,8 @@ restart:
 		return err
 	}
 
+
+	InitConsul(c.String("consul-address"),c.String("service-name"),c.String("address"))
 	var wg sync.WaitGroup
 	stop := make(chan interface{})
 
